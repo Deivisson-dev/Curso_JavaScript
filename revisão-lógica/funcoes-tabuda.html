@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Funcoes-tabuada</h1>
+
+    <button id="tabuada">Mostrar tabuada</button><button id="limpar">Limpar tabuada</button>
+
+    <div id="result">
+
+    </div>
+    <script>
+
+        let result = document.getElementById('result');
+        let tabuada = document.getElementById('tabuada');
+        let limpar = document.getElementById('limpar');
+
+        limpar.addEventListener('click', limparTela)
+        tabuada.addEventListener('click', realizarTabuada);
+
+        function realizarTabuada(){
+            let input_user = Number(prompt("Digite um Número"))
+            result.innerHTML = ''
+            for (let c = 0; c <= 1000; c++){
+                let multi = c * input_user
+                result.innerHTML += `${c} X ${input_user} = ${multi} <br>`
+            }
+        }
+
+        function limparTela(){
+            result.innerHTML = ""
+        }
+    </script>
+</body>
+</html>
