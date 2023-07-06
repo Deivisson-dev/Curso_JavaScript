@@ -1,10 +1,4 @@
-console.log('JavaSript Funcionando')
+console.log('JavaScript Normal')
 
-
-/*
-    Qualquer coisa é comentario
-*/
-
-// Comentário
 
 console.log("Teste")
