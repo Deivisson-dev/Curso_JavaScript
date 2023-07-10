@@ -9,4 +9,4 @@ const pessoa = {
     idade: 40
 }
 
-console.log(pessoa)
+console.log(pessoa.nome)
