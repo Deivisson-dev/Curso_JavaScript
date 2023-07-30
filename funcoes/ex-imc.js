@@ -7,17 +7,21 @@ Função calcula imc
  4-Deve retornar erro caso não reba nenhum parametro dentre os dois.
 */
 
-function calcImc(peso, altura){
-    if (arguments.length === 0){
+function calcImc(peso, altura, callback){
+    if (peso === undefined || altura === undefined){
         throw Error('Função espera dois parametros');
     }
 
     if (typeof peso !== 'number' || typeof altura !== 'number'){
         throw Error('Somente números');
     }
-
-    imc = peso / (altura * altura);
+    
+    let imc = peso / (altura * altura);
     imc = imc.toFixed(2);
+
+    if (typeof callback === 'function'){
+        return callback(imc);
+    }
     return imc;
 }
 
@@ -25,28 +29,25 @@ function classificaImc(imc){
     if (arguments.length === 0){
         throw Error('Função espera um parametro');
     }
-
-    if (typeof imc !== 'number'){
-        throw Error('Somente números');
-    }
-
-
     if (imc <= 16.9){
-        console.log('Muito abaixo do peso');
+        return 'Muito abaixo do peso';
     } else if (imc <= 18.4){
-        console.log('Abaixo do peso');
+        return 'Abaixo do peso';
     } else if (imc <= 24.9){
-        console.log('Peso normal');
+        return 'Peso normal';
     } else if (imc <= 29.9){
-        console.log('Acima do peso');
+        return 'Acima do peso';
     } else if (imc <= 34.9){
-        console.log('Obesidade Grau I');
+        return 'Obesidade Grau I';
     } else if (imc <= 40){
-        console.log('Obesidade Grau II');
+        return 'Obesidade Grau II';
     } else {
-        console.log('Obesidade Grau III');
+        return 'Obesidade Grau III';
     }
 }
 
-console.log(calcImc(150, 1.80));
-classificaImc(42);
+let imc = calcImc(60, 1.65);
+let imc2 = calcImc(60, 1.65, classificaImc);
+
+console.log(imc);
+console.log(imc2);
