@@ -97,3 +97,26 @@ main{
 	background: #6b6c68;
     line-height: 80px;
 }
+
+#email{
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#btn-inscrever{
+    padding: 10px;
+    background-color: #6b6c68;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#mensagem{
+    text-align: center;
+    color: white;
+}
